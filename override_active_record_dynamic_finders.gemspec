@@ -8,8 +8,8 @@ Gem::Specification.new do |spec|
   spec.version       = OverrideActiveRecordDynamicFinders::VERSION
   spec.authors       = ["Naveen Agarwal"]
   spec.email         = ["naveenagarwal287@gmail.com"]
-  spec.description   = %q{TODO: Write a gem description}
-  spec.summary       = %q{TODO: Write a gem summary}
+  spec.description   = %q{Overrides dynamic finders in ActiveRecord module to use new Activerecord relation metho}
+  spec.summary       = %q{Overrides dynamic finders in ActiveRecord module to use new Activerecord relation metho}
   spec.homepage      = ""
   spec.license       = "MIT"
 
