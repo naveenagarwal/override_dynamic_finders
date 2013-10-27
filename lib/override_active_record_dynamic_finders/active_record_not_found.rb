@@ -1,0 +1,2 @@
+class ActiveRecordNotFound < StandardError
+end
