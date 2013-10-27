@@ -22,7 +22,7 @@ when upgrading one of the applications from rails 2.3 to 3.2 the onemajor hurdel
 
 As we had more than 2000 such method calls, so it was not feasible for us to to change each and every query to use new ActiveRecord methods.
 
-Then I decided to comeup with a library which lets you use these methods, but behind the secenes these methods use only new ActiveRecord relation methods like where, limit, offcet, includes, having etc. Just include this gem in your gemfile and you are good to go.
+Then I decided to come-up with a library which lets you use these methods, but behind the secenes these methods use only new ActiveRecord relation methods like where, limit, offset, includes, having etc. Just include this gem in your gemfile and you are good to go.
 
 It overrides following methods for the ActiveRecord model class
 
