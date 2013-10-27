@@ -55,7 +55,7 @@ module OverrideActiveRecordDynamicFinders
 
       if method.start_with?("find_")
       puts "using overrided methods"
-        
+
         case method
         when /^find_(all_|last_)?by_([_a-zA-Z]\w*)$/
           finder  = :last if $1 == 'last_'
