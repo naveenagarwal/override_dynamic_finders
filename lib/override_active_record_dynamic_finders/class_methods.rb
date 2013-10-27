@@ -5,7 +5,6 @@ module OverrideActiveRecordDynamicFinders
     ALL       = :all
 
     def find(*args)
-      puts "using overrided methods"
       if args.first.is_a?(Symbol) && args.last.is_a?(Hash)
         compute_result(*args).send(args.first)
       elsif args.first.is_a?(Symbol) && !args.last.is_a?(Hash)
@@ -17,7 +16,6 @@ module OverrideActiveRecordDynamicFinders
     end
 
     def count(*args)
-      puts "using overrided methods"
 
       if args.last.is_a?(Hash) && ALL == args.first
         compute_result(*args).count
@@ -54,7 +52,6 @@ module OverrideActiveRecordDynamicFinders
       method = method_id.to_s
 
       if method.start_with?("find_")
-      puts "using overrided methods"
 
         case method
         when /^find_(all_|last_)?by_([_a-zA-Z]\w*)$/
