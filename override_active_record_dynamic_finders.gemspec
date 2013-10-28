@@ -10,7 +10,7 @@ Gem::Specification.new do |spec|
   spec.email         = ["naveenagarwal287@gmail.com"]
   spec.description   = %q{Overrides dynamic finders in ActiveRecord module to use new Activerecord relation metho}
   spec.summary       = %q{Overrides dynamic finders in ActiveRecord module to use new Activerecord relation metho}
-  spec.homepage      = ""
+  spec.homepage      = "https://github.com/naveenagarwal/override_dynamic_finders"
   spec.license       = "MIT"
 
   spec.files         = `git ls-files`.split($/)

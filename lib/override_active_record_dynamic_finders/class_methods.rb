@@ -8,7 +8,7 @@ module OverrideActiveRecordDynamicFinders
       if args.first.is_a?(Symbol) && args.last.is_a?(Hash)
         compute_result(*args).send(args.first)
       elsif args.first.is_a?(Symbol) && !args.last.is_a?(Hash)
-        result = clone
+        result = self
         result.send(args.first)
       else
         super *args
@@ -31,7 +31,7 @@ module OverrideActiveRecordDynamicFinders
     private
 
     def compute_result(*args)
-      result = clone
+      result = self
 
       finder_keys = KEYS_SET & args.last.keys
       finder_hash = args.last
@@ -70,14 +70,15 @@ module OverrideActiveRecordDynamicFinders
 
         conditions = nil
 
-        if finder_hash[:conditions].blank?
+        if finder_hash[:conditions].blank? || finder_hash[:conditions].is_a?(Hash)
           conditions = {}
 
           names.each_with_index do |name, index|
             conditions[name.to_sym] = args[index]
           end
 
-          finder_hash[:conditions] = conditions
+          finder_hash[:conditions] = {} if finder_hash[:conditions].blank?
+          finder_hash[:conditions].merge!(conditions)
 
         else
           conditions = []
